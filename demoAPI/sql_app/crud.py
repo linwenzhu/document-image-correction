@@ -1,26 +1,7 @@
 from sqlalchemy.orm import Session
 
 from . import models, schemas
-import os
-from fastapi import UploadFile
 
-
-async def save_uploaded_image(file: UploadFile, user_id: int):
-    # 创建上传目录（如果不存在）
-    upload_dir = f"uploads/user_{user_id}"
-    os.makedirs(upload_dir, exist_ok=True)
-
-    # 生成唯一的文件名
-    file_extension = os.path.splitext(file.filename)[1]
-    unique_filename = f"{user_id}_{file.filename}"
-    file_path = os.path.join(upload_dir, unique_filename)
-
-    # 保存文件
-    with open(file_path, "wb") as buffer:
-        content = await file.read()
-        buffer.write(content)
-
-    return file_path
 
 def get_user(db: Session, user_id: int):
     return db.query(models.User).filter(models.User.id == user_id).first()
@@ -64,6 +45,10 @@ def create_user_item(db: Session, item: schemas.ItemCreate, user_id: int):
     db.refresh(db_item)
     return db_item
 
-def images(db:Session):
-    return db.query(models.Aimage) .all()
-
+# 更新images数据库
+def upload_images(db:Session, image: schemas.ImageCreate,user_id: int):
+    db_image = models.Images() # 待修改
+    db.add(db_image)
+    db.commit()
+    db.refresh(db_image)
+    return db_image

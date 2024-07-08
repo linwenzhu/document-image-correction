@@ -25,9 +25,8 @@ class Item(Base):
 
     owner = relationship("User", back_populates="items")
 
-class Aimage(Base):
-    __tablename__ = "aimage"
 
-    id = Column(Integer, primary_key=True)
-    title = Column(String, unique=True, index=True)
-    file_path = Column(String)
+# 图片
+class Images(Base):
+    __tablename__ = "images"
+    id = Column(Integer, primary_key=True) #占位

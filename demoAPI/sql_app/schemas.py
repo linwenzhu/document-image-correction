@@ -35,8 +35,6 @@ class User(UserBase):
     class Config:
         orm_mode = True
 
-
-
-class Aimage(BaseModel):
-    id: int
-    title: str
+class ImageCreate(UserBase):
+    image: bytes
+    email: str

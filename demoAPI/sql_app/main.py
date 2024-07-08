@@ -1,13 +1,16 @@
-from fastapi import Depends, FastAPI, HTTPException, UploadFile, status
+from fastapi import Depends, FastAPI, HTTPException, UploadFile, status, Query
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-
+from fastapi.middleware.cors import CORSMiddleware
 from . import crud, models, schemas
 from .database import SessionLocal, engine
+from fastapi.responses import HTMLResponse
+import os
+
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="project")
+app = FastAPI(title="图片矫正系统")
 
 
 # Dependency
@@ -17,6 +20,17 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# 跨域
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins=["*"],  # 允许所有域名
+   allow_credentials=True,
+   allow_methods=["*"],  # 允许所有方法
+   allow_headers=["*"],  # 允许所有头
+)
+
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -33,28 +47,22 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
 
 async def get_current_active_user(current_user: models.User = Depends(get_current_user)):
     if current_user==None:
-        raise HTTPException(status_code=400, detail="无效或无认证用户")
+        raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
 
-@app.post("/token",tags=["登录部分"],description="登录")
-async def register(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
-    """
-
-    :param form_data: 1
-    :param db: 1
-    :return: 1
-    """
+@app.post("/token",tags=["登录"])
+async def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     dbuser = crud.get_user_by_email(db, form_data.username)
     if not dbuser:
-        raise HTTPException(status_code=400, detail="用户名或密码错误")
+        raise HTTPException(status_code=400, detail="Incorrect username or password")
     fpwd=form_data.password
     if not fpwd == dbuser.password:
-        raise HTTPException(status_code=400, detail="用户名或密码错误")
+        raise HTTPException(status_code=400, detail="Incorrect username or password")
 
     return {"access_token": dbuser.email, "token_type": "bearer"}
 
 
-@app.get("/users/me",tag=["用户设置操作"],description="获取当前用户信息")
+@app.get("/users/me")
 async def read_users_me(current_user: models.User = Depends(get_current_active_user)):
     return current_user
 
@@ -97,8 +105,37 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip, limit=limit)
     return items
 
-@app.post("/uploadfile/")
-async def create_upload_file(file: UploadFile):
-    return {"filename": file.filename}
+#@app.post("/uploadfile/")
+#async def create_upload_file(file: UploadFile):
+#    return {"filename": file.filename}
 
-@app.get("/images")
+@app.post("/user/{user_id}/items/", response_model=schemas.ImageCreate)
+async def create_upload_images(user_id: int,file: UploadFile = UploadFile(...), db: Session = Depends(get_db)):
+    image_content = await file.read()
+    upload_dir = "uploads" # 改为具体地址
+    os.makedirs(upload_dir, exist_ok=True)
+    image_path = save_image_to_filesystem(image=file, upload_dir=upload_dir)
+    if not image_path:
+        return {"error": "An error occurred while saving the image"}
+        # 获取图片大小和类型
+    image_size = os.path.getsize(image_path)
+    image_content_type = "image/jpeg"  # 假设图片是JPEG类型，应根据实际情况修改
+
+    return crud.upload_images(db:Session=Depends(get_db()),user_id : user_id)
+
+
+@app.get("/")
+
+
+
+@app.get("/")
+async def main():
+    content = """
+<body>
+<form action="/uploadfile/" enctype="multipart/form-data" method="post">
+<input name="file" type="file">
+<input type="submit">
+</form>
+</body>
+   """
+    return HTMLResponse(content=content)
