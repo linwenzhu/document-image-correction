@@ -1,0 +1,133 @@
+2024-07-10 11:09:03,860 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 11:20:16,396 INFO create_item_for_user(156) Function create_item_for_user called
+2024-07-10 11:20:16,397 INFO create_item_for_user(157) Received request to create item for user 1
+2024-07-10 11:20:16,397 INFO create_item_for_user(158) Title: hello
+2024-07-10 11:20:16,397 INFO create_item_for_user(159) Description: None
+2024-07-10 11:20:16,397 INFO create_item_for_user(160) File name: 42_2 copy.png
+2024-07-10 11:20:16,408 INFO create_item_for_user(168) Item created with id: 1
+2024-07-10 11:20:16,411 INFO create_item_for_user(172) Image saved at: uploads/item_1\origin\1_20240710112016.png
+2024-07-10 11:20:16,415 INFO create_item_for_user(179) Item updated successfully
+2024-07-10 14:33:53,244 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:34:05,144 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:34:22,505 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:34:46,164 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:35:49,540 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:35:51,040 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 14:57:52,035 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 15:15:22,273 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 15:24:19,142 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 15:24:22,772 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-10 15:24:30,464 ERROR create_item_for_user(177) Error occurred: module 'datetime' has no attribute 'now'
+2024-07-10 15:33:50,733 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 15:59:01,607 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 16:32:08,883 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 17:26:04,961 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-10 17:33:42,500 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-12 10:02:41,675 WARNING _load_backend_mixin(622) (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\anaconda\envs\apipytorch\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-12 10:06:35,097 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:07:50,344 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:10:55,840 ERROR create_item_for_user(177) Error occurred: expected str, bytes or os.PathLike object, not NoneType
+2024-07-12 10:33:21,563 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:33:55,289 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:35:19,479 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:43:19,067 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:44:09,158 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:44:45,572 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:46:58,591 ERROR create_item_for_user(177) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 10:57:39,159 ERROR create_item_for_user(178) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 11:00:08,181 ERROR create_item_for_user(178) Error occurred: 1 validation error for ItemCreate
+title
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-07-12 11:03:46,405 ERROR create_item_for_user(177) Error occurred: name 'title' is not defined
+2024-07-12 11:03:51,427 ERROR create_item_for_user(177) Error occurred: name 'title' is not defined

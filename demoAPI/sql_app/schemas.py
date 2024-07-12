@@ -4,8 +4,7 @@ from datetime import datetime
 
 
 class ItemBase(BaseModel):
-    title: str
-    description: str | None = None
+    description: Optional[str] = None
 
 
 class ItemCreate(ItemBase):
